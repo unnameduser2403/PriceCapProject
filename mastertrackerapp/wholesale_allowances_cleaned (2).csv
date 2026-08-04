@@ -1,0 +1,145 @@
+Payment Method,Fuel Type,Charge Type,Allowance,Cap Period,Start Date,End Date,Cost Value
+All,Electricity - Single-Rate,UR,CfD,October 2022 - December 2022,2022-10-01,2022-12-31,-24.245620159718424
+All,Electricity - Multi-Register,UR,CfD,October 2022 - December 2022,2022-10-01,2022-12-31,-34.34851099457318
+All,Electricity - Single-Rate,UR,Direct Fuel,October 2022 - December 2022,2022-10-01,2022-12-31,312.4290248309983
+All,Electricity - Multi-Register,UR,Direct Fuel,October 2022 - December 2022,2022-10-01,2022-12-31,307.0859347808397
+Non-PPM,gas,UR,Direct Fuel,October 2022 - December 2022,2022-10-01,2022-12-31,109.7375810412328
+PPM,gas,UR,Direct Fuel,October 2022 - December 2022,2022-10-01,2022-12-31,108.77600578503308
+Non-PPM,gas,UR,Backwardation,October 2022 - December 2022,2022-10-01,2022-12-31,35.90249017360635
+PPM,gas,UR,Backwardation,October 2022 - December 2022,2022-10-01,2022-12-31,68.34842699540916
+All,Electricity - Single-Rate,UR,Backwardation,October 2022 - December 2022,2022-10-01,2022-12-31,115.04454132867528
+All,Electricity - Single-Rate,UR,CfD,January 2023 - March 2023,2023-01-01,2023-03-31,-42.51094366299463
+All,Electricity - Multi-Register,UR,CfD,January 2023 - March 2023,2023-01-01,2023-03-31,-62.15791440962461
+All,Electricity - Single-Rate,UR,Direct Fuel,January 2023 - March 2023,2023-01-01,2023-03-31,367.324220692926
+All,Electricity - Multi-Register,UR,Direct Fuel,January 2023 - March 2023,2023-01-01,2023-03-31,379.2655497113161
+Non-PPM,gas,UR,Direct Fuel,January 2023 - March 2023,2023-01-01,2023-03-31,122.46075921901628
+PPM,gas,UR,Direct Fuel,January 2023 - March 2023,2023-01-01,2023-03-31,121.67600409045
+Non-PPM,gas,UR,Backwardation,January 2023 - March 2023,2023-01-01,2023-03-31,138.55273284297502
+PPM,gas,UR,Backwardation,January 2023 - March 2023,2023-01-01,2023-03-31,156.02989326520304
+All,Electricity - Single-Rate,UR,Backwardation,January 2023 - March 2023,2023-01-01,2023-03-31,395.0278927563417
+All,Electricity - Single-Rate,UR,CfD,April 2023 - June 2023,2023-04-01,2023-06-30,-57.31286242624832
+All,Electricity - Multi-Register,UR,CfD,April 2023 - June 2023,2023-04-01,2023-06-30,-78.42851533891255
+All,Electricity - Single-Rate,UR,Direct Fuel,April 2023 - June 2023,2023-04-01,2023-06-30,261.3869836054272
+All,Electricity - Multi-Register,UR,Direct Fuel,April 2023 - June 2023,2023-04-01,2023-06-30,263.36218436981613
+Non-PPM,gas,UR,Direct Fuel,April 2023 - June 2023,2023-04-01,2023-06-30,86.2259766093598
+PPM,gas,UR,Direct Fuel,April 2023 - June 2023,2023-04-01,2023-06-30,86.047485645504
+Non-PPM,gas,UR,Backwardation,April 2023 - June 2023,2023-04-01,2023-06-30,79.81714465672906
+PPM,gas,UR,Backwardation,April 2023 - June 2023,2023-04-01,2023-06-30,88.04231532983427
+All,Electricity - Single-Rate,UR,Backwardation,April 2023 - June 2023,2023-04-01,2023-06-30,256.4745729644656
+All,Electricity - Single-Rate,UR,CfD,July 2023 - September 2023,2023-07-01,2023-09-30,10.225929801847458
+All,Electricity - Multi-Register,UR,CfD,July 2023 - September 2023,2023-07-01,2023-09-30,13.480297600352246
+All,Electricity - Single-Rate,UR,Direct Fuel,July 2023 - September 2023,2023-07-01,2023-09-30,158.175848686746
+All,Electricity - Multi-Register,UR,Direct Fuel,July 2023 - September 2023,2023-07-01,2023-09-30,160.12642074777662
+Non-PPM,gas,UR,Direct Fuel,July 2023 - September 2023,2023-07-01,2023-09-30,49.76033743921002
+PPM,gas,UR,Direct Fuel,July 2023 - September 2023,2023-07-01,2023-09-30,49.5506414978962
+Non-PPM,gas,UR,Backwardation,July 2023 - September 2023,2023-07-01,2023-09-30,-35.76575557811508
+PPM,gas,UR,Backwardation,July 2023 - September 2023,2023-07-01,2023-09-30,-42.30221640436323
+All,Electricity - Single-Rate,UR,Backwardation,July 2023 - September 2023,2023-07-01,2023-09-30,-55.9609497558152
+All,Electricity - Single-Rate,UR,CfD,October 2023 - December 2023,2023-10-01,2023-12-31,16.268919874877714
+All,Electricity - Multi-Register,UR,CfD,October 2023 - December 2023,2023-10-01,2023-12-31,21.770872967644834
+All,Electricity - Single-Rate,UR,Direct Fuel,October 2023 - December 2023,2023-10-01,2023-12-31,133.1282802381006
+All,Electricity - Multi-Register,UR,Direct Fuel,October 2023 - December 2023,2023-10-01,2023-12-31,133.93320232129085
+Non-PPM,gas,UR,Direct Fuel,October 2023 - December 2023,2023-10-01,2023-12-31,45.06242081431793
+PPM,gas,UR,Direct Fuel,October 2023 - December 2023,2023-10-01,2023-12-31,45.02721031235813
+Non-PPM,gas,UR,Backwardation,October 2023 - December 2023,2023-10-01,2023-12-31,-26.79494500928933
+PPM,gas,UR,Backwardation,October 2023 - December 2023,2023-10-01,2023-12-31,-31.99429305502877
+All,Electricity - Single-Rate,UR,Backwardation,October 2023 - December 2023,2023-10-01,2023-12-31,-32.396859511386765
+All,Electricity - Single-Rate,UR,CfD,January 2024 - March 2024,2024-01-01,2024-03-31,18.09932657444844
+All,Electricity - Multi-Register,UR,CfD,January 2024 - March 2024,2024-01-01,2024-03-31,24.33070153474384
+All,Electricity - Single-Rate,UR,Direct Fuel,January 2024 - March 2024,2024-01-01,2024-03-31,130.89568951432335
+All,Electricity - Multi-Register,UR,Direct Fuel,January 2024 - March 2024,2024-01-01,2024-03-31,131.5132659072248
+Non-PPM,gas,UR,Direct Fuel,January 2024 - March 2024,2024-01-01,2024-03-31,48.73768125283392
+PPM,gas,UR,Direct Fuel,January 2024 - March 2024,2024-01-01,2024-03-31,48.68738655958949
+Non-PPM,gas,UR,Backwardation,January 2024 - March 2024,2024-01-01,2024-03-31,-13.825688926560524
+PPM,gas,UR,Backwardation,January 2024 - March 2024,2024-01-01,2024-03-31,-13.696344267927907
+All,Electricity - Single-Rate,UR,Backwardation,January 2024 - March 2024,2024-01-01,2024-03-31,9.331462766761968
+All,Electricity - Single-Rate,UR,CfD,April 2024 - June 2024,2024-04-01,2024-06-30,29.76094991607108
+All,Electricity - Multi-Register,UR,CfD,April 2024 - June 2024,2024-04-01,2024-06-30,40.09597463930297
+All,Electricity - Single-Rate,UR,Direct Fuel,April 2024 - June 2024,2024-04-01,2024-06-30,95.64051390421596
+All,Electricity - Multi-Register,UR,Direct Fuel,April 2024 - June 2024,2024-04-01,2024-06-30,96.25908394803872
+Non-PPM,gas,UR,Direct Fuel,April 2024 - June 2024,2024-04-01,2024-06-30,34.92933902729043
+PPM,gas,UR,Direct Fuel,April 2024 - June 2024,2024-04-01,2024-06-30,34.84497110754358
+Non-PPM,gas,UR,Backwardation,April 2024 - June 2024,2024-04-01,2024-06-30,-17.615118452711457
+PPM,gas,UR,Backwardation,April 2024 - June 2024,2024-04-01,2024-06-30,-17.276597131725662
+All,Electricity - Single-Rate,UR,Backwardation,April 2024 - June 2024,2024-04-01,2024-06-30,-4.192213073579618
+All,Electricity - Single-Rate,UR,CfD,July 2024 - September 2024,2024-07-01,2024-09-30,41.93406372666848
+All,Electricity - Multi-Register,UR,CfD,July 2024 - September 2024,2024-07-01,2024-09-30,56.81344049891225
+All,Electricity - Single-Rate,UR,Direct Fuel,July 2024 - September 2024,2024-07-01,2024-09-30,81.29105165373845
+All,Electricity - Multi-Register,UR,Direct Fuel,July 2024 - September 2024,2024-07-01,2024-09-30,81.79389554749639
+Non-PPM,gas,UR,Direct Fuel,July 2024 - September 2024,2024-07-01,2024-09-30,29.854293645074517
+PPM,gas,UR,Direct Fuel,July 2024 - September 2024,2024-07-01,2024-09-30,29.79578699769141
+Non-PPM,gas,UR,Backwardation,July 2024 - September 2024,2024-07-01,2024-09-30,-17.61511845271146
+PPM,gas,UR,Backwardation,July 2024 - September 2024,2024-07-01,2024-09-30,-17.276597131725662
+All,Electricity - Single-Rate,UR,Backwardation,July 2024 - September 2024,2024-07-01,2024-09-30,-20.11283050261756
+All,Electricity - Single-Rate,UR,CfD,October 2024 - December 2024,2024-10-01,2024-12-31,33.214732638971
+All,Electricity - Multi-Register,UR,CfD,October 2024 - December 2024,2024-10-01,2024-12-31,44.590410394149714
+All,Electricity - Single-Rate,UR,Direct Fuel,October 2024 - December 2024,2024-10-01,2024-12-31,93.1522551826044
+All,Electricity - Multi-Register,UR,Direct Fuel,October 2024 - December 2024,2024-10-01,2024-12-31,93.62673996800454
+Non-PPM,gas,UR,Direct Fuel,October 2024 - December 2024,2024-10-01,2024-12-31,35.55203615692711
+PPM,gas,UR,Direct Fuel,October 2024 - December 2024,2024-10-01,2024-12-31,35.51335729138298
+Non-PPM,gas,UR,Backwardation,October 2024 - December 2024,2024-10-01,2024-12-31,0.0
+PPM,gas,UR,Backwardation,October 2024 - December 2024,2024-10-01,2024-12-31,0.0
+All,Electricity - Single-Rate,UR,Backwardation,October 2024 - December 2024,2024-10-01,2024-12-31,-6.623174538821097
+All,Electricity - Single-Rate,UR,CfD,January 2025 - March 2025,2025-01-01,2025-03-31,30.796294021203646
+All,Electricity - Multi-Register,UR,CfD,January 2025 - March 2025,2025-01-01,2025-03-31,41.41608625167122
+All,Electricity - Single-Rate,UR,Direct Fuel,January 2025 - March 2025,2025-01-01,2025-03-31,91.5800148227627
+All,Electricity - Multi-Register,UR,Direct Fuel,January 2025 - March 2025,2025-01-01,2025-03-31,92.05802797728936
+Non-PPM,gas,UR,Direct Fuel,January 2025 - March 2025,2025-01-01,2025-03-31,36.249038940672094
+PPM,gas,UR,Direct Fuel,January 2025 - March 2025,2025-01-01,2025-03-31,36.217833349681385
+Non-PPM,gas,UR,Backwardation,January 2025 - March 2025,2025-01-01,2025-03-31,2.391861495659478
+PPM,gas,UR,Backwardation,January 2025 - March 2025,2025-01-01,2025-03-31,2.477396053034416
+All,Electricity - Single-Rate,UR,Backwardation,January 2025 - March 2025,2025-01-01,2025-03-31,11.253165019418264
+All,Electricity - Single-Rate,UR,CfD,April 2025 - June 2025,2025-04-01,2025-06-30,31.05945500809204
+All,Electricity - Multi-Register,UR,CfD,April 2025 - June 2025,2025-04-01,2025-06-30,41.83978235488611
+All,Electricity - Single-Rate,UR,Direct Fuel,April 2025 - June 2025,2025-04-01,2025-06-30,99.94622899967632
+All,Electricity - Multi-Register,UR,Direct Fuel,April 2025 - June 2025,2025-04-01,2025-06-30,100.16640087863364
+Non-PPM,gas,UR,Direct Fuel,April 2025 - June 2025,2025-04-01,2025-06-30,40.67785453754055
+PPM,gas,UR,Direct Fuel,April 2025 - June 2025,2025-04-01,2025-06-30,40.68834107623656
+Non-PPM,gas,UR,Backwardation,April 2025 - June 2025,2025-04-01,2025-06-30,2.391861495659477
+PPM,gas,UR,Backwardation,April 2025 - June 2025,2025-04-01,2025-06-30,2.477396053034416
+All,Electricity - Single-Rate,UR,Backwardation,April 2025 - June 2025,2025-04-01,2025-06-30,11.253165019418264
+All,Electricity - Single-Rate,UR,CfD,July 2025 - September 2025,2025-07-01,2025-09-30,33.267225462590275
+All,Electricity - Multi-Register,UR,CfD,July 2025 - September 2025,2025-07-01,2025-09-30,45.11065213229039
+All,Electricity - Single-Rate,UR,Direct Fuel,July 2025 - September 2025,2025-07-01,2025-09-30,90.90846359239728
+All,Electricity - Multi-Register,UR,Direct Fuel,July 2025 - September 2025,2025-07-01,2025-09-30,91.25134763588038
+Non-PPM,gas,UR,Direct Fuel,July 2025 - September 2025,2025-07-01,2025-09-30,34.83274815892358
+PPM,gas,UR,Direct Fuel,July 2025 - September 2025,2025-07-01,2025-09-30,34.79570535111918
+Non-PPM,gas,UR,Backwardation,July 2025 - September 2025,2025-07-01,2025-09-30,0.0
+PPM,gas,UR,Backwardation,July 2025 - September 2025,2025-07-01,2025-09-30,0.0
+All,Electricity - Single-Rate,UR,Backwardation,July 2025 - September 2025,2025-07-01,2025-09-30,0.0
+All,Electricity - Single-Rate,UR,CfD,October 2025 - December 2025,2025-10-01,2025-12-31,35.31299039534527
+All,Electricity - Multi-Register,UR,CfD,October 2025 - December 2025,2025-10-01,2025-12-31,47.78947090728098
+All,Electricity - Single-Rate,UR,Direct Fuel,October 2025 - December 2025,2025-10-01,2025-12-31,89.46692006632169
+All,Electricity - Multi-Register,UR,Direct Fuel,October 2025 - December 2025,2025-10-01,2025-12-31,89.91054577804103
+Non-PPM,gas,UR,Direct Fuel,October 2025 - December 2025,2025-10-01,2025-12-31,33.133354008390526
+PPM,gas,UR,Direct Fuel,October 2025 - December 2025,2025-10-01,2025-12-31,33.08507120659548
+Non-PPM,gas,UR,Backwardation,October 2025 - December 2025,2025-10-01,2025-12-31,0.0
+PPM,gas,UR,Backwardation,October 2025 - December 2025,2025-10-01,2025-12-31,0.0
+All,Electricity - Single-Rate,UR,Backwardation,October 2025 - December 2025,2025-10-01,2025-12-31,4.329879772815273
+All,Electricity - Single-Rate,UR,CfD,January 2026 - March 2026,2026-01-01,2026-03-31,32.938289065996614
+All,Electricity - Multi-Register,UR,CfD,January 2026 - March 2026,2026-01-01,2026-03-31,47.41089685585676
+All,Electricity - Single-Rate,UR,Direct Fuel,January 2026 - March 2026,2026-01-01,2026-03-31,87.21332777112976
+All,Electricity - Multi-Register,UR,Direct Fuel,January 2026 - March 2026,2026-01-01,2026-03-31,87.61574684518081
+Non-PPM,gas,UR,Direct Fuel,January 2026 - March 2026,2026-01-01,2026-03-31,29.927439208086515
+PPM,gas,UR,Direct Fuel,January 2026 - March 2026,2026-01-01,2026-03-31,29.89521891835717
+Non-PPM,gas,UR,Backwardation,January 2026 - March 2026,2026-01-01,2026-03-31,0.0
+PPM,gas,UR,Backwardation,January 2026 - March 2026,2026-01-01,2026-03-31,0.0
+All,Electricity - Single-Rate,UR,Backwardation,January 2026 - March 2026,2026-01-01,2026-03-31,12.439138955364967
+All,Electricity - Single-Rate,UR,CfD,April 2026 - June 2026,2026-04-01,2026-06-30,39.16713163208959
+All,Electricity - Multi-Register,UR,CfD,April 2026 - June 2026,2026-04-01,2026-06-30,56.54820045639276
+All,Electricity - Single-Rate,UR,Direct Fuel,April 2026 - June 2026,2026-04-01,2026-06-30,82.260072128172
+All,Electricity - Multi-Register,UR,Direct Fuel,April 2026 - June 2026,2026-04-01,2026-06-30,82.53318932094452
+Non-PPM,gas,UR,Direct Fuel,April 2026 - June 2026,2026-04-01,2026-06-30,26.21999158504765
+PPM,gas,UR,Direct Fuel,April 2026 - June 2026,2026-04-01,2026-06-30,26.197057264241195
+Non-PPM,gas,UR,Backwardation,April 2026 - June 2026,2026-04-01,2026-06-30,0.0
+PPM,gas,UR,Backwardation,April 2026 - June 2026,2026-04-01,2026-06-30,0.0
+All,Electricity - Single-Rate,UR,Backwardation,April 2026 - June 2026,2026-04-01,2026-06-30,7.751207428566502
+All,Electricity - Single-Rate,UR,CfD,July 2026 - September 2026,2026-07-01,2026-09-30,26.345796039224883
+All,Electricity - Multi-Register,UR,CfD,July 2026 - September 2026,2026-07-01,2026-09-30,35.811561147529865
+All,Electricity - Single-Rate,UR,Direct Fuel,July 2026 - September 2026,2026-07-01,2026-09-30,98.52643923000072
+All,Electricity - Multi-Register,UR,Direct Fuel,July 2026 - September 2026,2026-07-01,2026-09-30,98.76410820364622
+Non-PPM,gas,UR,Direct Fuel,July 2026 - September 2026,2026-07-01,2026-09-30,39.216684493811
+PPM,gas,UR,Direct Fuel,July 2026 - September 2026,2026-07-01,2026-09-30,39.17441135271119
+Non-PPM,gas,UR,Backwardation,July 2026 - September 2026,2026-07-01,2026-09-30,0.5591668654179607
+PPM,gas,UR,Backwardation,July 2026 - September 2026,2026-07-01,2026-09-30,0.6517262874070262
+All,Electricity - Single-Rate,UR,Backwardation,July 2026 - September 2026,2026-07-01,2026-09-30,-0.245756458039694
