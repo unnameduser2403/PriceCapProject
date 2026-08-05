@@ -120,6 +120,16 @@ for i in range(10):
     w = st.sidebar.number_input(f"Decile {i+1} Weight (%)", value=DEFAULT_PORTFOLIO_WEIGHTS[i]*100, step=1.0, min_value=0.0, max_value=100.0)
     weights.append(w / 100.0)
 
+# --- NEW: Dynamic Total Calculator ---
+total_weight_pct = sum(weights) * 100
+if round(total_weight_pct, 1) == 100.0:
+    st.sidebar.success(f"**Total: {total_weight_pct:.1f}%** ✅")
+elif total_weight_pct > 100.0:
+    st.sidebar.error(f"**Total: {total_weight_pct:.1f}%** ❌ (Exceeds 100%)")
+else:
+    st.sidebar.warning(f"**Total: {total_weight_pct:.1f}%** ⚠️ (Below 100%)")
+# -------------------------------------
+
 portfolio_size = st.sidebar.number_input("Total Active Customers", value=1000000, step=100000)
 
 is_dual_fuel = (selected_fuel == "Dual Fuel")
@@ -140,29 +150,32 @@ ur_baseline_gas = df_filtered[(df_filtered['Charge Type'] == 'Unit Rate') & (df_
 # 4. TARIFF RESTRUCTURING LEVER
 # ==========================================
 st.markdown("### 🎛️ The Restructuring Engine")
-st.markdown("Simulate Ofgem shifting costs from the Standing Charge to the Unit Rate. (e.g., Shifting Operating Costs entirely to volumetric recovery).")
+st.markdown("Simulate shifting costs between the fixed Standing Charge and volumetric Unit Rates.")
 
 col1, col2, col3 = st.columns(3)
-shift_amount = col1.number_input("Amount to shift off Standing Charge (£)", min_value=0.0, max_value=float(sc_baseline_total), value=0.0, step=5.0)
+shift_direction = col1.selectbox("Shift Direction", ["SC ➔ UR (Reduce SC)", "UR ➔ SC (Increase SC)"])
+shift_amount = col2.number_input("Amount to shift (£)", min_value=0.0, value=0.0, step=5.0)
 
-shift_fuel_target = col2.selectbox(
+shift_fuel_target = col3.selectbox(
     "Apply Volumetric Shift to:", 
     options=["Electricity", "Gas", "Split (70% Elec / 30% Gas)"]
 ) if is_dual_fuel else selected_fuel
 
-# Math: Converting the SC £ drop into a UR p/kWh increase based on TDCV
-sc_simulated_total = sc_baseline_total - shift_amount
+# Multiplier: 1 means taking off SC and adding to UR. -1 means taking off UR and adding to SC.
+multiplier = 1 if shift_direction == "SC ➔ UR (Reduce SC)" else -1
+
+sc_simulated_total = sc_baseline_total - (shift_amount * multiplier)
 ur_simulated_elec = ur_baseline_elec
 ur_simulated_gas = ur_baseline_gas
 
 if shift_amount > 0:
     if shift_fuel_target == "Electricity" or (not is_dual_fuel and selected_fuel == 'Electricity Single-Rate'):
-        ur_simulated_elec += (shift_amount / DEFAULT_TDCV['Electricity Single-Rate'])
+        ur_simulated_elec += ((shift_amount * multiplier) / DEFAULT_TDCV['Electricity Single-Rate'])
     elif shift_fuel_target == "Gas" or (not is_dual_fuel and selected_fuel == 'Gas'):
-        ur_simulated_gas += (shift_amount / DEFAULT_TDCV['Gas'])
+        ur_simulated_gas += ((shift_amount * multiplier) / DEFAULT_TDCV['Gas'])
     elif shift_fuel_target == "Split (70% Elec / 30% Gas)":
-        ur_simulated_elec += ((shift_amount * 0.70) / DEFAULT_TDCV['Electricity Single-Rate'])
-        ur_simulated_gas += ((shift_amount * 0.30) / DEFAULT_TDCV['Gas'])
+        ur_simulated_elec += (((shift_amount * 0.70) * multiplier) / DEFAULT_TDCV['Electricity Single-Rate'])
+        ur_simulated_gas += (((shift_amount * 0.30) * multiplier) / DEFAULT_TDCV['Gas'])
 
 # ==========================================
 # 5. DECILE IMPACT CALCULATION
@@ -206,7 +219,11 @@ st.divider()
 st.markdown("### 📊 Distributional Margin Heatmap")
 
 met1, met2, met3 = st.columns(3)
-met1.metric("Standing Charge Reduction", f"-£{shift_amount:,.2f}")
+
+# Dynamically show if SC increased or decreased
+sc_diff = sc_simulated_total - sc_baseline_total
+met1.metric("Standing Charge Change", f"{'+' if sc_diff > 0 else ''}£{sc_diff:,.2f}")
+
 if net_portfolio_impact < 0:
     met2.metric("Total Portfolio Margin Impact", f"-£{abs(net_portfolio_impact):,.0f}", delta="Net Loss", delta_color="inverse")
 else:
