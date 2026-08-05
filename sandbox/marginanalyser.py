@@ -9,7 +9,7 @@ import os
 # ==========================================
 st.set_page_config(page_title="Margin Analyzer", layout="wide", page_icon="🎯")
 st.title("🎯 Customer Decile & Margin Impact Analyzer")
-st.markdown("Analyze how shifting fixed Standing Charges to volumetric Unit Rates impacts your profitability across different customer consumption profiles.")
+st.markdown("Analyze how shifting costs between fixed Standing Charges and volumetric Unit Rates impacts your profitability across different customer consumption profiles.")
 
 ALLOWANCE_DICT = {
     'DF': 'Direct Fuel Cost', 'Direct Fuel': 'Direct Fuel Cost', 
@@ -101,7 +101,30 @@ def load_baseline_data():
         return combined[combined['Parsed_Date'] == max_date].copy()
     return pd.DataFrame()
 
+@st.cache_data
+def load_total_bill_data():
+    possible_folders = ['', 'mastertrackerapp/']
+    for folder in possible_folders:
+        filepath = os.path.join(folder, 'total_bill_cleaned.csv')
+        if os.path.exists(filepath):
+            df_tb = pd.read_csv(filepath)
+            
+            if 'Fuel Type' in df_tb.columns:
+                df_tb['Fuel Type'] = df_tb['Fuel Type'].replace(FUEL_MAPPING)
+                
+            if 'Cap Period' in df_tb.columns:
+                df_tb['Temp_Start'] = df_tb['Cap Period'].astype(str).str.split('-').str[0].str.strip()
+                df_tb['Parsed_Date'] = pd.to_datetime(df_tb['Temp_Start'], errors='coerce')
+                
+            if 'Parsed_Date' in df_tb.columns:
+                max_date = df_tb['Parsed_Date'].max()
+                return df_tb[df_tb['Parsed_Date'] == max_date].copy()
+            else:
+                return df_tb
+    return pd.DataFrame()
+
 df_baseline = load_baseline_data()
+df_totals = load_total_bill_data()
 
 # ==========================================
 # 3. SIDEBAR (GLOBAL SETTINGS)
@@ -120,7 +143,7 @@ for i in range(10):
     w = st.sidebar.number_input(f"Decile {i+1} Weight (%)", value=DEFAULT_PORTFOLIO_WEIGHTS[i]*100, step=1.0, min_value=0.0, max_value=100.0)
     weights.append(w / 100.0)
 
-# --- NEW: Dynamic Total Calculator ---
+# --- Dynamic Total Calculator ---
 total_weight_pct = sum(weights) * 100
 if round(total_weight_pct, 1) == 100.0:
     st.sidebar.success(f"**Total: {total_weight_pct:.1f}%** ✅")
@@ -128,7 +151,6 @@ elif total_weight_pct > 100.0:
     st.sidebar.error(f"**Total: {total_weight_pct:.1f}%** ❌ (Exceeds 100%)")
 else:
     st.sidebar.warning(f"**Total: {total_weight_pct:.1f}%** ⚠️ (Below 100%)")
-# -------------------------------------
 
 portfolio_size = st.sidebar.number_input("Total Active Customers", value=1000000, step=100000)
 
@@ -141,10 +163,21 @@ df_filtered = df_baseline[
 ].copy()
 df_filtered['Charge Type'] = df_filtered['Charge Type'].replace({'UR': 'Unit Rate', 'SC': 'Standing Charge'})
 
-# Calculate Current SC and UR Rates (Not Annualized, raw £/kWh and £/year)
+# Calculate Current SC and UR Rates
 sc_baseline_total = df_filtered[df_filtered['Charge Type'] == 'Standing Charge']['Cost Value'].sum()
 ur_baseline_elec = df_filtered[(df_filtered['Charge Type'] == 'Unit Rate') & (df_filtered['Fuel Type'] == 'Electricity Single-Rate')]['Cost Value'].sum() / DEFAULT_TDCV['Electricity Single-Rate'] if is_dual_fuel or selected_fuel == 'Electricity Single-Rate' else 0
 ur_baseline_gas = df_filtered[(df_filtered['Charge Type'] == 'Unit Rate') & (df_filtered['Fuel Type'] == 'Gas')]['Cost Value'].sum() / DEFAULT_TDCV['Gas'] if is_dual_fuel or selected_fuel == 'Gas' else 0
+
+# --- Pull Official Benchmark Bill ---
+ofgem_benchmark_bill = 0.0
+if not df_totals.empty:
+    matched_total = df_totals[
+        (df_totals['Fuel Type'] == selected_fuel) & 
+        (df_totals['Payment Method'] == selected_payment)
+    ]
+    if not matched_total.empty:
+        value_col = 'Total Bill' if 'Total Bill' in matched_total.columns else 'Cost Value'
+        ofgem_benchmark_bill = matched_total[value_col].sum()
 
 # ==========================================
 # 4. TARIFF RESTRUCTURING LEVER
@@ -161,7 +194,7 @@ shift_fuel_target = col3.selectbox(
     options=["Electricity", "Gas", "Split (70% Elec / 30% Gas)"]
 ) if is_dual_fuel else selected_fuel
 
-# Multiplier: 1 means taking off SC and adding to UR. -1 means taking off UR and adding to SC.
+# Multiplier logic: 1 means reducing SC to add to UR. -1 means adding to SC by reducing UR.
 multiplier = 1 if shift_direction == "SC ➔ UR (Reduce SC)" else -1
 
 sc_simulated_total = sc_baseline_total - (shift_amount * multiplier)
@@ -192,7 +225,6 @@ for i in range(10):
         gas_kwh = DECILES[selected_fuel][i] if selected_fuel == 'Gas' else 0
         label = f"D{i+1}: {elec_kwh if elec_kwh > 0 else gas_kwh} kWh"
         
-    # Calculate baseline and simulated revenues (which equates to the cap bill)
     base_rev = sc_baseline_total + (ur_baseline_elec * elec_kwh) + (ur_baseline_gas * gas_kwh)
     sim_rev = sc_simulated_total + (ur_simulated_elec * elec_kwh) + (ur_simulated_gas * gas_kwh)
     variance = sim_rev - base_rev
@@ -218,7 +250,7 @@ net_portfolio_impact = df_results["Portfolio Impact (£)"].sum()
 st.divider()
 st.markdown("### 📊 Distributional Margin Heatmap")
 
-met1, met2, met3 = st.columns(3)
+met1, met2, met3, met4 = st.columns(4)
 
 # Dynamically show if SC increased or decreased
 sc_diff = sc_simulated_total - sc_baseline_total
@@ -228,7 +260,13 @@ if net_portfolio_impact < 0:
     met2.metric("Total Portfolio Margin Impact", f"-£{abs(net_portfolio_impact):,.0f}", delta="Net Loss", delta_color="inverse")
 else:
     met2.metric("Total Portfolio Margin Impact", f"+£{net_portfolio_impact:,.0f}", delta="Net Gain", delta_color="normal")
-met3.metric("Portfolio Verification", f"{sum(weights)*100:.1f}% Distributed", help="Must equal 100%")
+    
+met3.metric("Portfolio Verification", f"{total_weight_pct:.1f}% Distributed", help="Must equal 100%")
+
+if ofgem_benchmark_bill > 0:
+    met4.metric("Ofgem Benchmark Bill (TDCV)", f"£{ofgem_benchmark_bill:,.2f}")
+else:
+    met4.metric("Ofgem Benchmark Bill (TDCV)", "Data Unavailable")
 
 if sum(weights) > 1.01 or sum(weights) < 0.99:
     st.error("Warning: Your portfolio weights in the sidebar do not equal 100%. Please adjust.")
