@@ -313,3 +313,23 @@ All,Electricity - Multi-Register ,UR,nRAB,July 2026 - September 2026,2026-07-01,
 All,Gas,SC,WHD,July 2026 - September 2026,2026-07-01,2026-09-01,3.4102172359204843
 All,Gas,UR,WHD (unit rate),July 2026 - September 2026,2026-07-01,2026-09-01,1.8135405223791567
 All,Gas,SC,GGL,July 2026 - September 2026,2026-07-01,2026-09-01,3.8179000000000003
+All,Electricity - Single-Rate,UR,RO,October 2026 - December 2026,2026-10-01,2026-12-01,8.18212
+All,Electricity - Single-Rate,UR,FiT,October 2026 - December 2026,2026-10-01,2026-12-01,8.0501327
+All,Electricity - Single-Rate,UR,ECO,October 2026 - December 2026,2026-10-01,2026-12-01,-
+All,Electricity - Single-Rate,SC,WHD,October 2026 - December 2026,2026-10-01,2026-12-01,3.4102172
+All,Electricity - Single-Rate,UR,WHD (unit rate),October 2026 - December 2026,2026-10-01,2026-12-01,5.0061991
+All,Electricity - Single-Rate,UR,AAHEDC,October 2026 - December 2026,2026-10-01,2026-12-01,0.4938767
+All,Electricity - Single-Rate,UR,NCC,October 2026 - December 2026,2026-10-01,2026-12-01,1.0436184
+All,Electricity - Single-Rate ,UR,nRAB,October 2026 - December 2026,2026-10-01,2026-12-01,4.6340968
+All,Electricity - Multi-Register,UR,RO,October 2026 - December 2026,2026-10-01,2026-12-01,8.18212
+All,Electricity - Multi-Register,UR,FiT,October 2026 - December 2026,2026-10-01,2026-12-01,8.0501327
+All,Electricity - Multi-Register,UR,ECO,October 2026 - December 2026,2026-10-01,2026-12-01,-
+All,Electricity - Multi-Register,SC,WHD,October 2026 - December 2026,2026-10-01,2026-12-01,3.4102172
+All,Electricity - Multi-Register,UR,WHD (unit rate),October 2026 - December 2026,2026-10-01,2026-12-01,5.0061991
+All,Electricity - Multi-Register,UR,AAHEDC,October 2026 - December 2026,2026-10-01,2026-12-01,0.4932054
+All,Electricity - Multi-Register,UR,NCC,October 2026 - December 2026,2026-10-01,2026-12-01,1.0421713
+All,Electricity - Multi-Register ,UR,nRAB,October 2026 - December 2026,2026-10-01,2026-12-01,4.6061476
+All,Gas,UR,ECO,October 2026 - December 2026,2026-10-01,2026-12-01,-
+All,Gas,SC,WHD,October 2026 - December 2026,2026-10-01,2026-12-01,3.4102172
+All,Gas,UR,WHD (unit rate),October 2026 - December 2026,2026-10-01,2026-12-01,1.8135405
+All,Gas,SC,GGL,October 2026 - December 2026,2026-10-01,2026-12-01,3.8179
